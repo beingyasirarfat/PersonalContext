@@ -1,0 +1,12 @@
+#flash{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 100;
+        display: none;
+        padding: 20px;
+        border-radius: 5px;
+        font-size: 24px;
+        margin: 15;
+        background: #ebebeb;
+}

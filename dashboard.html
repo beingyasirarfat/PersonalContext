@@ -5,35 +5,89 @@
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Yasir is cool</title>
-    
+
     <link rel="stylesheet" href="assets/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="assets/CSS/dashboard.css">
+    <script src="assets/JS/quotes.js"></script>
     <!-- <script src="assets/JS/bootstrap.min.js"></script> -->
 </head>
 
 <body>
     <img id="background">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-3">
                 <div class="row">
-                    <ul>
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                        <li>Item 5</li>
-                    </ul>
+
                 </div>
             </div>
             <div class="col">
-                This is middle content
+                <!-- clock  -->
+                <div class="row">
+                    <div class="clock">
+                        <div class="hourHand"></div>
+                        <div class="minuteHand"></div>
+                        <div class="secondHand"></div>
+                        <div class="center"></div>
+                        <div class="time"></div>
+                        <ul>
+                            <li><span>1</span></li>
+                            <li><span>2</span></li>
+                            <li><span>3</span></li>
+                            <li><span>4</span></li>
+                            <li><span>5</span></li>
+                            <li><span>6</span></li>
+                            <li><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                        </ul>
+                    </div>
+                    <audio id="clocksound" src="/assets/Sound/tick.mp3"  loop class="audio"></audio>
+                </div>
+                <!-- quote -->
+
+                <section>
+                    <div class="card text-white" style="border-radius: 15px;">
+                        <div class="card-body">
+                            <div class="text-center mb-4 pb-2">
+                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-quotes/bulb.webp"
+                                    alt="Bulb" width="100">
+                            </div>
+
+                            <figure class="text-center mb-0 _quote_body font-weight-bold">
+                                <blockquote class="blockquote">
+                                    <h2 class="pb-3 font-weight-bold">
+                                        <i class="fas fa-quote-left fa-xs text-white"></i>
+                                        <span class="lead font-italic font-weight-bold" id="_quote">Many of life's failures are people
+                                            who did not realize how
+                                            close they were to success when they gave up.</span>
+                                        <i class="fas fa-quote-right fa-xs text-white"></i>
+                                    </h2>
+                                </blockquote>
+                                <figcaption class="text-white blockquote-footer mb-0" id="_author">
+                                    Thomas Edison
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- quote -->
             </div>
-            <div class="col-3">
-                This is right Content
+            <div class="col-4">
+                <div class="row">
+                    <table class="table text-white table-hover">
+                        <tbody id="TableBody">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </body>
+<script src="assets/JS/taskmodule.js"></script>
 <script src="assets/JS/dashboard.js"></script>
 </html>

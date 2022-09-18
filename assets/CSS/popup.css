@@ -68,6 +68,15 @@ body {
   -webkit-user-select: none;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+* {
+-ms-overflow-style: none !important;
+}
+
 .btn:hover {
   background-color: #bbb;
 }

@@ -4,21 +4,31 @@ const View = document.getElementById("ViewWords");
 const Invert = document.getElementById("Invert");
 const Notes = document.getElementById("Notes");
 const AddNote = document.getElementById("AddNote");
-const TableBody = document.getElementById("TableBody");
 const TableHead = document.getElementById("TableHead");
 
 
 //Words
-Invert.onclick = function () {
+Invert.onclick = async function () {
 	var intensity = 1;
 	var no = Number(Input.value);
-	if (Number.isInteger(no)) {
-		if (no > 0 && no < 100) {
+	if (Number.isInteger(no) && no > 0 && no < 100) {
 			intensity = no / 100;
-		}
 	}
-	chrome.tabs.executeScript(null, { code: `document.querySelectorAll("html").forEach(a=>a.style.filter = "invert(${intensity})")` }, function () { });
+	var activeTab = await chrome.tabs.query({ active: true, currentWindow: true });
+	function Inv(intensity) {
+		document.querySelectorAll("html").forEach(a => {
+			a.style.filter = `invert(${intensity}`
+		});
+	}
+	chrome.scripting.executeScript(
+		{
+			target: { tabId: activeTab[0].id },
+			func: Inv,
+			args:[intensity]
+		});
+
 }
+
 Save.onclick = function () {
 
 	var WORD = document.getElementById("Word").value;
@@ -102,11 +112,11 @@ function Notify(WORD, SUCCESS = true) {
 }
 
 Input.addEventListener("keyup", function (event) {
-	if (event.keyCode === 13) {
+	if (event.key === 'Enter') {
 		event.preventDefault();
-		//if input is multi word addnote click
-		if (Input.value.indexOf(" ") > -1) AddNote.click();
-		else Save.click();
+		if (event.altKey) AddNote.click();
+		else if (event.ctrltKey)  Invert.click();
+		else if(!Number(Input.value))  Save.click();
 	}
 });
 
@@ -117,12 +127,6 @@ View.onclick = function () {
 	});
 	return false;
 };
-//////////////////
-//Tasks Functions//
-chrome.storage.sync.get({ 'Tasks': new Array() }, function (data) {
-	let Tasks = data.Tasks;
-	renderTable(Tasks);
-});
 
 AddNote.onclick = function (e) {
 	e.preventDefault();
@@ -131,7 +135,7 @@ AddNote.onclick = function (e) {
 		chrome.storage.sync.get("Tasks", function (data) {
 			let obj = data.Tasks;
 			if (!obj) obj = new Array();
-			obj.push({ Task: value, done: false ,time: Date.now()});
+			obj.push({ Task: value, done: false, time: Date.now() });
 			chrome.storage.sync.set({ 'Tasks': obj }, () => renderTable(obj));
 		});
 		Input.value = "";
@@ -140,62 +144,3 @@ AddNote.onclick = function (e) {
 	}
 }
 
-function renderTable(Tasks) {
-	TotalTasks = Tasks.length;
-
-	//Populate the table
-	TableBody.innerHTML = '';
-	let th = '<th scope="col" class="text-center">';
-	let the = "</th>";
-	for (let i = 0; i < Tasks.length; i++) {
-		let dom = "";
-		const tr = document.createElement('tr');
-		dom += th + (i+1) + the;
-		dom += th + Tasks[i].Task + the;
-		if (Tasks[i].done) dom += th + '<i>&#10003;</i>' + the;
-		else dom += th + '<i>&#10008;</i>' + the;
-		dom += th + '<i>&#128465;</i>' + the;
-		tr.innerHTML = dom;
-		TableBody.appendChild(tr);
-	}
-
-	//Add event Listerner to all
-	let x = document.querySelectorAll('tr');
-	for (i = 0; i < x.length; i++) {
-		x[i].children[2].addEventListener("dblclick", function () {
-			UpdateTask(this.parentElement.children[0].innerHTML - 1, 0);
-		});
-		x[i].children[3].addEventListener("dblclick", function () {
-			UpdateTask(this.parentElement.children[0].innerHTML - 1, 1);
-		});
-	}
-	if (Tasks.length == 0) {
-		TableHead.innerHTML = "No Tasks! Hurray!";
-	}
-}
-
-function UpdateTask(index = 0, type = 'done') {
-	chrome.storage.sync.get("Tasks", function (data) {
-		let obj = data.Tasks;
-		if (type == 1) {
-			obj.splice(index, 1);
-		}
-		//if type is false then change the done value
-		else {
-			obj[index].done = !obj[index].done;
-		}
-		chrome.storage.sync.set({ "Tasks": obj }, () => { renderTable(obj) });
-	});
-}
-
-chrome.tts.getVoices(
-	function(voices) {
-	  for (var i = 0; i < voices.length; i++) {
-		console.log('Voice ' + i + ':');
-		console.log('  name: ' + voices[i].voiceName);
-		console.log('  lang: ' + voices[i].lang);
-		console.log('  extension id: ' + voices[i].extensionId);
-		console.log('  event types: ' + voices[i].eventTypes);
-	  }
-	}
-  );

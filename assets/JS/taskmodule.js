@@ -19,7 +19,7 @@ function renderTable(Tasks) {
 		TableBody.appendChild(tr);
 	}
 
-	let x = document.querySelectorAll('tr');
+	let x = document.querySelectorAll('#TableBody tr');
 	for (i = 0; i < x.length; i++) {
 		x[i].children[2].addEventListener("dblclick", function () {
 			UpdateTask(this.parentElement.children[0].innerHTML - 1, 0);

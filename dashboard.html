@@ -17,9 +17,47 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-3">
+                <!-- word to learn -->
                 <div class="row">
+                    <section>
+                        <div class="card text-white" style="border-radius: 15px;">
+                            <div class="card-body">
+                                <blockquote class="blockquote text-center pb-3 font-weight-bold text-capitalize">
+                                    <div id="_word" class="h2">
+                                        exclamation
+                                        <sub id="_word_type font h6">(noun)</sub>
+                                    </div>
+                                    <code class="text-white" id="_word_ipa">/ˌekskləˈmāSH(ə)n/</code>
+                                </blockquote>
 
+                                <figure class="text-center mb-0 _quote_body font-weight-bold">
+                                    <blockquote class="blockquote">
+                                            <i class="fas fa-quote-left fa-xs text-white"></i>
+                                            <table class="table text-white table-hover">
+                                                <tbody id="_word">
+                                                    <tr>
+                                                        <th scope="col" class="text-justify">1.
+                                                            A loud calling or crying out, for example as in surprise, pain, grief, joy, anger, etc.
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col" class="text-justify">2.
+                                                            A word expressing outcry; an interjection
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="col" class="text-justify">3.  A clause type used to make an exclamatory statement: What a mess they made!; How stupid I was!</th>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <i class="fas fa-quote-right fa-xs text-white"></i>
+                                    </blockquote>
+                                </figure>
+                            </div>
+                        </div>
+                    </section>
                 </div>
+                <!-- word to learn -->
             </div>
             <div class="col">
                 <!-- clock  -->
@@ -44,8 +82,11 @@
                             <li><span>11</span></li>
                             <li><span>12</span></li>
                         </ul>
+                        <div id="clockBG" class="text-white text-center position-absolute">
+                            Is this your best?
+                        </div>
                     </div>
-                    <audio id="clocksound" src="/assets/Sound/tick.mp3"  loop class="audio"></audio>
+                    <audio id="clocksound" src="/assets/Sound/tick.mp3" loop class="audio"></audio>
                 </div>
                 <!-- quote -->
 
@@ -53,15 +94,15 @@
                     <div class="card text-white" style="border-radius: 15px;">
                         <div class="card-body">
                             <div class="text-center mb-4 pb-2">
-                                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-quotes/bulb.webp"
-                                    alt="Bulb" width="100">
+                                <img src="/assets/Icons/bulb.webp" alt="Bulb" width="100">
                             </div>
 
                             <figure class="text-center mb-0 _quote_body font-weight-bold">
                                 <blockquote class="blockquote">
                                     <h2 class="pb-3 font-weight-bold">
                                         <i class="fas fa-quote-left fa-xs text-white"></i>
-                                        <span class="lead font-italic font-weight-bold" id="_quote">Many of life's failures are people
+                                        <span class="lead font-italic font-weight-bold" id="_quote">Many of life's
+                                            failures are people
                                             who did not realize how
                                             close they were to success when they gave up.</span>
                                         <i class="fas fa-quote-right fa-xs text-white"></i>
@@ -90,4 +131,5 @@
 </body>
 <script src="assets/JS/taskmodule.js"></script>
 <script src="assets/JS/dashboard.js"></script>
+
 </html>

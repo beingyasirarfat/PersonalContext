@@ -20,12 +20,11 @@ chrome.runtime.getPackageDirectoryEntry(function (root) {
 	const time = document.querySelector('.time');
 	const clock = document.querySelector('.clock');
 	const audio = document.querySelector('.audio');
-
 	function setClockTick() {
 
 		const today = new Date();
 		const second = today.getSeconds();
-		const secondDeg = ((second / 60) * 360) + 360;
+		const secondDeg = ((second / 60) * 360);
 		secondHand.style.transform = `rotate(${secondDeg}deg)`;
 
 
@@ -38,13 +37,11 @@ chrome.runtime.getPackageDirectoryEntry(function (root) {
 		const hourDeg = ((hour / 12) * 360);
 		hourHand.style.transform = `rotate(${hourDeg}deg)`;
 
-
 		time.innerHTML = '<span>' + '<strong>' + hour + '</strong>' + ' : ' + minute + ' : ' + '<small>' + second + '</small>' + '</span>';
 
 	}
-
+	setClockTick();
 	setInterval(setClockTick, 1000);
-
 	chrome.storage.sync.get({ 'sound': true }, function (data) {
 		if (data.sound) {
 			audio.play();

@@ -1,0 +1,91 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Words Admin Panel</title>
+  <link rel="stylesheet" href="assets/CSS/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+<!-- Meaw -->
+
+<body class="bg-dark">
+  <div class="container-fluid">
+    <div class="row">
+      <table class="table table-bordered table-striped table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">
+              Serial
+            </th>
+            <th scope="col" class="text-center">
+              Word
+            </th>
+            <th scope="col" class="text-center">
+              Definition
+            </th>
+            <th scope="col" class="text-center">
+              Synonyms
+            </th>
+            <th scope="col" class="text-center">
+              Antonyms
+            </th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div id="Navigation">
+        <div class="d-flex justify-content-between">
+          <div>
+            <button value="Previous" class="btn" id="Previous">
+              &lt;&lt; Previous
+            </button>
+            <button value="Next" class="btn" id="Next">
+              Next &gt;&gt;
+            </button>
+          </div>
+          <div class="float-right">
+            <div class="form-group">
+              <select class="form-control" id="Sort">
+                <option disabled="disabled">Sort Word</option>
+                <option value="Serial">Serial Number</option>
+                <option value="SerialDesc">Serial Number Desc</option>
+                <option value="Ascending">Alphabetically Asc</option>
+                <option value="Descending">Alphabetically Desc</option>
+                <option value="Time">Saving Time</option>
+                <option value="TimeDesc">Saving Time Desc</option>
+              </select>
+            </div>
+          </div>
+          <div class="float-right form-group">
+            <select class="form-control" id="Limit">
+              <option disabled="disabled">Set Display Limit</option>
+              <option>10</option>
+              <option>20</option>
+              <option>30</option>
+              <option>40</option>
+              <option>50</option>
+              <option>60</option>
+              <option>70</option>
+              <option>80</option>
+              <option>90</option>
+              <option>100</option>
+            </select>
+          </div>
+          <div class="float-right form-group">
+            <button id="Add" type="button" class="btn btn-outline-success">
+              Add Word
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="snackbar"></div>
+</body>
+<!-- Here comes the master -->
+<!-- <script src="assets/JS/script.js"></script> -->
+<script src="assets/JS/reviewWords.js"></script>
+
+</html>
+<!-- You want More? -->

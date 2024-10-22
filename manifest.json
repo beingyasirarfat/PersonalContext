@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "Persoanl Context",
+    "version": "2.1.0",
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Save Word"
+    },
+    "description": "This is the best extension ever",
+    "icons": {
+        "128": "assets/icons/yabulary128.png",
+        "48": "assets/icons/yabulary48.png",
+        "16": "assets/icons/yabulary16.png"
+    },
+    "author": "Yasir Arfat",
+    "background": {
+        "service_worker": "worker.js"
+    },
+    "chrome_url_overrides": {
+        "newtab": "dashboard.html"
+    },
+
+    "host_permissions": ["<all_urls>"],
+
+    "options_page": "options.html",
+
+    "permissions": [
+        "tabs",
+        "tts",
+        "contextMenus",
+        "storage",
+        "scripting",
+        "notifications"
+    ],
+    "short_name": "Context",
+    "version_name": "Homepage Customization"
+}

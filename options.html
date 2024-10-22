@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Yasir's cool options</title>
+  <link rel="stylesheet" type="text/css" href="assets/CSS/common.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/CSS/options.css" />
+  <link rel="stylesheet" href="assets/CSS/bootstrap.min.css" />
+</head>
+
+<body>
+  <div id="content">
+    <div id="title">
+      <img src="assets/IMG/Yasir.png" title="Yasir's Vocabulary" alt="Yasir's Vocabulary" />
+      <div>Cool options for making the world a better place</div>
+    </div>
+    <form name="options-form" action="">
+      <div class="option-row mb-0 mt-3">
+        <div class="option-value-primary">
+          <input type="text" name="optionsInputText" id="optionsInputText" style="width: 100%"
+            placeholder="All yout input goes here" />
+        </div>
+      </div>
+      <div class="option-row">
+        <div class="option-name">Word Storage Locaion:</div>
+        <div class="option-value">
+          <div class="option-value-primary">
+            <input type="checkbox" name="cacheStorage" id="cacheStorage" />
+            <label for="cacheStorage"> Use Chrome's Cache Memory </label>
+          </div>
+          <div class="option-value-primary"
+            title="The Extension doesn't care about how data is handled on database. It only makes GET & POST request at given URI">
+            <input type="checkbox" name="serverStorage" id="serverStorage" />
+            <label for="serverStorage"> HTTP server</label>
+          </div>
+        </div>
+      </div>
+      <div class="option-row">
+        <div class="option-name">Export/Import Saved Words:</div>
+        <div class="btn-row mt-2">
+          <div class="option-value-primary">
+            <button id="exportToServer" class="btn btn-default mb-2 mr-2">
+              Export To Database
+            </button>
+            <button id="clearHistory" class="btn btn-default mb-2 mr-2">
+              Clear history
+            </button>
+            <button id="exportToCSV" class="btn btn-default mb-2 mr-2">
+              Export CSV
+            </button>
+            <button id="importFromCSV" class="btn btn-default mb-2 mr-2">
+              Import CSV
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="option-row">
+        <div class="option-name">Save / Reset</div>
+        <div class="btn-row mt-2">
+          <button id="saveSettings" class="btn btn-primary">Save</button>
+          <button id="resetSettings" class="btn btn-default">Reset</button>
+          <input type="file" accept=".csv" id="CSVInput" style="visibility: hidden" />
+          <span id="saveStatus"></span>
+        </div>
+      </div>
+
+      <div class="option-row">
+        <div class="option-name">soundFeedback Effects:</div>
+        <div class="option-value">
+          <div class="option-value-primary">
+            <input type="checkbox" name="soundFeedback" id="soundFeedback" />
+            <label for="soundFeedback"> Enable soundfeedback </label>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="footer">
+      &copy;
+      <a href="https://yasirarfat.net">Yasir Arfat</a>
+    </div>
+    <div id="flashMessage" style="text-align: center"></div>
+    <script type="text/javascript" src="assets/JS/options.js"></script>
+  </div>
+</body>
+
+</html>

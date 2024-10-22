@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Yasir is so cool</title>
+    <script async src="assets/JS/dashboard.js"></script>
+    <link rel="stylesheet" href="assets/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/CSS/dashboard.css">
+    <!-- <script src="assets/JS/bootstrap.min.js"></script> -->
+</head>
+
+<body>
+    <img id="background">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <!-- word to learn -->
+                <div class="row">
+                    <section>
+                        <div class="card text-white" style="border-radius: 15px;">
+                            <div class="card-body">
+                                <blockquote class="blockquote text-center pb-3 font-weight-bold text-capitalize">
+                                    <div id="word" class="h2">ephemeral</div>
+                                </blockquote>
+                                <div id="phonitics" class="card-title">
+                                </div>
+                                <div class="text-center mb-0 _quote_body font-weight-bold">
+                                    <table class="table text-white table-hover">
+                                        <tbody id="tableBody">
+                                            <tr>
+                                                <td>Phonetic: /əˈfɛ.mə.ɹəl/ <span>🔊</span><audio controls=""
+                                                        style="display: none;">
+                                                        <source
+                                                            src="https://api.dictionaryapi.dev/media/pronunciations/en/ephemeral-us.mp3">
+                                                    </audio></td>
+                                            </tr>
+                                            <tr>
+                                                <td>1. Part of Speech: noun</td>
+                                            </tr>
+                                            <tr>
+                                                <td>1.1. Definition: Something which lasts for a short period of time.
+                                                    Synonyms: ephemeron</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2. Part of Speech: adjective</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2.1. Definition: Lasting for a short period of time. Synonyms:
+                                                    evanescent, fleeting, momentary, short, short-lived, temporary,
+                                                    transitory, volatile Antonyms: eternal, everlasting, permanent,
+                                                    timeless</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2.2. Definition: Existing for only one day, as with some flowers,
+                                                    insects, and diseases.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2.3. Definition: (of a body of water) Usually dry, but filling with
+                                                    water for brief periods during and after precipitation.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Source Links: <a href="https://en.wiktionary.org/wiki/ephemeral"
+                                                        target="_blank">https://en.wiktionary.org/wiki/ephemeral</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- word to learn -->
+            </div>
+            <div class="col">
+                <!-- clock  -->
+                <div class="row">
+                    <div id="clock">
+                        <div id="hourHand"></div>
+                        <div id="minuteHand"></div>
+                        <div id="secondHand"></div>
+                        <div id="centerDot"></div>
+                        <div id="digitalTime"></div>
+                        <ul>
+                            <li><span>1</span></li>
+                            <li><span>2</span></li>
+                            <li><span>3</span></li>
+                            <li><span>4</span></li>
+                            <li><span>5</span></li>
+                            <li><span>6</span></li>
+                            <li><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                        </ul>
+                        <div id="motivation" class="text-danger text-center position-absolute clockBG">
+                            Is this your best?
+                        </div>
+                        <div id="elapsedTime" class="text-white text-center position-absolute clockBG">
+                        </div>
+                        <div id="timeRemaining" class="text-white text-center position-absolute clockBG">
+                        </div>
+                        <div class="input-group date" id="datetimePicker" data-target-input="nearest"
+                            style="display: none;">
+                            <input type="datetime-local" class="form-control" id="datetimePickerInput"
+                                style="display: none;" />
+                            <div class="input-group-append" data-target="#datetimePicker" data-toggle="datetimepicker">
+                                <div class="input-group-text">
+                                    <span class="input-group-addon">
+                                        <span class="fas fa-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <audio id="clockSound" src="/assets/clockSounds/click.mp3" loop class="audio"></audio>
+                </div>
+                <!-- quote -->
+
+                <section>
+                    <div class="card text-white" style="border-radius: 15px;">
+                        <div class="card-body">
+                            <div class="text-center mb-2">
+                                <img src="/assets/Icons/bulb.webp" alt="Bulb" width="100">
+                            </div>
+                            <figure id="quote" class="text-center font-weight-bold">
+                                <blockquote class="blockquote">
+                                    <h2 class="font-weight-bold">
+                                        <i class="fas fa-quote-left fa-xs text-white"></i>
+                                        <span class="lead font-italic font-weight-bold" id="quoteBody">Many of life's
+                                            failures are people
+                                            who did not realize how
+                                            close they were to success when they gave up.</span>
+                                        <i class="fas fa-quote-right fa-xs text-white"></i>
+                                    </h2>
+                                </blockquote>
+                                <figcaption class="text-white blockquote-footer" id="quoteAuthor">
+                                    Thomas Edison
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- quote -->
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <table class="table text-white table-hover">
+                        <tbody id="notesTable">
+                            <tr>
+                                <th scope="col" class="text-center">1</th>
+                                <th scope="col" class="text-center"> Aren't you forgetting something?</th>
+                                <th scope="col" class="text-center"><i>✘</i></th>
+                                <th scope="col" class="text-center"><i>🗑</i></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- <script src="assets/JS/notesModule.js"></script> -->
+<script async src="assets/JS/clockModule.js"></script>
+<script async src="assets/JS/dictionaryModule.js"></script>
+<script async src="assets/JS/notesModule.js"></script>
+<script async src="assets/JS/quotes.js"></script>
+<script async src="assets/Js/randomWords.js"></script>
+<script async src="assets/JS/randomFacts.js"></script>
+
+</html>
